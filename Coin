@@ -1,39 +1,48 @@
-//
-// Represents a coin with two sides that can be flipped.
-// *******************************************************************
+/**
+* Represents a coin with two sides that can be flipped.
+* @author Jonathon Webster
+* @version 10/03/17
+*/
 public class Coin
 {
 	public final int HEADS = 0;
 	public final int TAILS = 1;
-	private int face;
-	// ---------------------------------------------
-	// Sets up the coin by flipping it initially.
-	// ---------------------------------------------
-	public Coin ()
+	private int face;// all instance data should be private
+	/**
+	 * Constructor method. this is invoked when new Coin is 
+	 * executed.
+	 * Note:
+	 * 	1) name is exactly the same as the class name 'Coin'
+	 * 	2) does not haca a return 'type', not even 'void'
+	 */
+	public Coin()//header (does not have a return type)
 	{
-		flip();
+		flip();// flow of control goes to flip() method
 	}
-	// -----------------------------------------------
-	// Flips the coin by randomly choosing a face.
-	// -----------------------------------------------
-	public void flip()
+	/**
+	 * Method to simulate a coin flipping. Generates a 'heads'
+	 * or 'tails'
+	 */
+	public void flip()//header, note, No ';' at end of header; void means it doesnt return info
 	{
 		face = (int) (Math.random() * 2);
 	}
-	// ---------------------------------------------------------
-	// Returns true if the current face of the coin is heads.
-	// ---------------------------------------------------------
+	/**
+	 * Method to check if coin is facing heads up
+	 * @return true if 'heads', false if 'tails'
+	 */
 	public boolean isHeads()
 	{
 		return (face == HEADS);
 	}
-	// ----------------------------------------------------
-	// Returns the current face of the coin as a string.
-	// ----------------------------------------------------
+	/**
+	 * Returns a string representation of a Coin object
+	 * @return heads or tails
+	 */
 	public String toString()
 	{
-		String faceName;
-		if (face == HEADS)
+		String faceName;// local variable, only exists while method executing
+		if (isHeads())
 			faceName = "Heads";
 		else
 			faceName = "Tails";
