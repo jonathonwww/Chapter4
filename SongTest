@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class SongTest {
+    
+    public static void main(String[] args) {
+     
+        Song song = new Song();
+        Scanner scan = new Scanner (System.in);
+        System.out.println("\fEnter the title of your song");
+        song.setTitle(scan.nextLine());
+        System.out.println("Enter the artist");
+        song.setArtist(scan.nextLine());
+        System.out.println("Enter how many seconds are in the song");
+        song.setTime(scan.nextInt());
+       
+        
+        System.out.println(song + " written by " + song.getArtist() + song.getTime());
+    }
+}
