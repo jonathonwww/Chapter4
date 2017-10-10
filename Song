@@ -1,0 +1,35 @@
+public class Song {
+
+    private String title = "";
+    private String artist = "";
+    private String time = "";
+
+    /**
+     * Sets title of the song
+     * @param  t title of song as a string
+     */
+    public void setTitle (String t) {
+        title = t;
+    }
+
+    public String toString () {
+        return title;
+    }
+    
+    public String getArtist () {
+        return artist;
+    }
+    
+    public void setArtist (String s) {
+        artist = s;
+    }
+    
+    public String getTime() {
+        return time;
+    }
+    
+    public void setTime(int sSystem.out.println("Enter how many seconds are in the song");ecounds) {
+        time = "The length is " + secounds/60 + ":" + secounds%60;
+    }
+   
+}
