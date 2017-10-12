@@ -1,23 +1,30 @@
+/**
+ * The purpose of this program is to calcuate the number of heads flipped in a row.
+ * @author jonathon
+ * @version 10/12/2017
+ */
 public class CountFlips {
-    
+
     public static void main (String[] args){
-        
+
         final int NUM_FLIPS = 10;
-        int heads = 0, tails = 0;
+        int heads = 0;
         System.out.print("\f");
         Coin c1 = new Coin();
-        
+        int max = heads;
         for (int count = 1; count <= NUM_FLIPS; count++){
             c1.flip();
             System.out.println(c1);
-            if (c1.isHeads())
+            if (c1.isHeads()) {
                 heads++;
+                if (max < heads) 
+                    max = heads;
+            }
             else
-                tails++;
+                heads = 0;
         }
-        
+
         System.out.println("The number of flips : " + NUM_FLIPS);
-        System.out.println("The number of heads: " + heads);
-        System.out.println("The number of tails: " + tails);
+        System.out.println("The maximum run of heads was " + max);
     }
 }
