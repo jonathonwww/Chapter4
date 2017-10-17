@@ -1,0 +1,84 @@
+/**
+ * A bank account class with methods to deposit to, withdraw from,
+ * change the name on, charge a fee to, and print a summary of the account.
+ * @author Jonathon Webster
+ * @version 10/17/17
+ */
+
+public class Account
+{
+    private double balance;
+    private String name;
+    private long acctNum;
+
+    /**
+     *Constructor -- initializes balance, owner, and account number
+     *@param initBal- the intitail balance
+     *@param owner- the name of the owner of the account
+     *@number- the account number
+     */
+    public Account(double initBal, String owner, long number)
+    {
+        balance = initBal;
+        name = owner;
+        acctNum = number;
+    }
+
+    /**
+     * Checks to see if balance is sufficient for withdrawal.
+     * If so, decrements balance by amount; if not, prints message.
+     * @param amount- the amount of money they want to withdrawl
+     */
+    public void withdraw(double amount)
+    {
+        if (balance >= amount)
+            balance -= amount;
+        else
+            System.out.println("Insufficient funds");
+    }
+
+    /**
+     *  Adds deposit amount to balance.
+     *  @param amount- amount to be added
+     */
+    public void deposit(double amount)
+    {
+        balance += amount;
+    }
+
+    /**
+     * returns the balance
+     * @return balance
+     */
+    public double getBalance()
+    {
+        return balance;
+    }
+
+    /**
+     * Returns a string containing the name, account number, and balance.
+     * @return all of the info in the account
+     */
+    public String toString()
+    {
+        return "Owners name: " + name + ". Account number: " + acctNum + ". Balance: $" + balance;
+    }
+
+    /**
+     * Deducts $10 service fee
+     */
+    public void chargeFee()
+    {
+        balance -= 10;
+    }
+    
+    /**
+     * Changes the users name.
+     * @param newName- the new name the user wants.
+     */
+    public void changeName(String newName)
+    {
+        name = newName;
+    }
+
+}
