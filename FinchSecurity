@@ -1,0 +1,35 @@
+/**
+ * this program makes the finch go crazy when an object is removed
+ * 
+ * @author Jonathon Webster
+ * @version 10/17/17
+ */
+import edu.cmu.ri.createlab.terk.robot.finch.Finch;
+public class FinchSecurity {
+
+    public static void main(String [] args) {
+
+        Finch myFinch = new Finch();
+        while(!myFinch.isBeakUp()){
+            while (myFinch.isObstacle()) {
+                myFinch.setLED(240,0,0);
+                myFinch.sleep(1000);
+                myFinch.setLED(0,0,0);
+                myFinch.sleep(1000);
+                myFinch.setLED(240,0,0);
+            }
+            myFinch.saySomething("The item is gone");
+            myFinch.sleep(1000);
+            myFinch.setWheelVelocities(-100,100,500);
+            myFinch.setWheelVelocities(100,-100,500);
+            for (int x = 1; x <= 4; x++) {
+                myFinch.setLED(240,0,0);
+                myFinch.sleep(500);
+                myFinch.setLED(0,0,240);
+                myFinch.sleep(500);
+            }
+
+        }
+    }
+}
+
