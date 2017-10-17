@@ -1,4 +1,3 @@
-// Needs a package declaration to move to another folder
 /**
  * This program uses many of the finches functions
  * @author Jonathon
@@ -12,15 +11,17 @@ public class FinchTemplateFile
         // Instantiating the Finch object
         Finch myFinch = new Finch();
         // Write some code here!
-        System.out.print("This will output on the screen."); 
+        System.out.print("3 2 1 go!"); 
         myFinch.sleep(1000); // in milliseconds (1000 = 1 second)
         myFinch.setLED(0,100,200); // 0 to 255 
-        myFinch.saySomething("The Finch will say hi"); 
-        myFinch.setWheelVelocities(-100,100,1000); // -255 to 255 & time is // in milliseconds
+        myFinch.saySomething("The race has begun!"); 
+        myFinch.setWheelVelocities(100,100,4000); // -255 to 255 & time is // in milliseconds
         // Always end your program with finch.quit()
         myFinch.playTone(400, 30, 1000);// plays a tone
         myFinch.sleep(1000);// makes it sleep
         myFinch.playTone(200, 30, 1000);
+        myFinch.saySomething("I won!"); 
+        myFinch.setWheelVelocities(-100,100,4000); 
         myFinch.quit();
         System.exit(0);
     }
