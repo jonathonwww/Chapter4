@@ -4,12 +4,13 @@
  * @author Jonathon Webster
  * @version 10/17/17
  */
-
+import java.text.NumberFormat;
 public class Account
 {
     private double balance;
     private String name;
     private long acctNum;
+    NumberFormat num = NumberFormat.getCurrencyInstance();
 
     /**
      *Constructor -- initializes balance, owner, and account number
@@ -61,16 +62,19 @@ public class Account
      */
     public String toString()
     {
-        return "Owners name: " + name + ". Account number: " + acctNum + ". Balance: $" + balance;
+        return ("Account Summary for " + name + "\nAccount Number: " 
+        + acctNum + "\nBalance: " +  num.format(balance));
     }
 
     /**
      * Deducts $10 service fee
+     * @return balance - 10
      */
-    public void chargeFee()
+    public double chargeFee()
     {
-        balance -= 10;
+       return balance -= 10;
     }
+    
     
     /**
      * Changes the users name.
@@ -80,5 +84,14 @@ public class Account
     {
         name = newName;
     }
+    
+    /**
+     * returns the name
+     * @return name
+     */    
+    public String getName(){
+        return name;
 
+    }    
 }
+
