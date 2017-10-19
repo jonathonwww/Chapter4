@@ -8,29 +8,34 @@ public class ManageAccounts
     public static void main(String[] args)
     {
         Account acct1, acct2;
-
+        System.out.print("\f");
         //create account1 for Sally with $1000
         acct1 = new Account(1000, "Sally", 1111);
 
         //create account2 for Joe with $500
-        acct2 = new Account(500, "Joe", 1112);
+        acct2 = new Account(500, "Joe", 2222);
         //deposit $100 to Joe's account
         acct2.deposit(100);
         //print Joe's new balance (use getBalance())
-        System.out.println(acct2.getBalance());
+        System.out.printf(acct2.getName() + "'s balance: $%.2f", acct2.getBalance());
+        System.out.println("\n");
         //withdraw $1000 from Joe’s account
         acct2.withdraw(1000);
         //withdraw $50 from Sally's account
         acct1.withdraw(50);
         //print Sally's new balance (use getBalance())
-        System.out.println(acct1.getBalance());
+        System.out.printf(acct1.getName() + "'s balance: $%.2f ", acct1.getBalance());
+        System.out.println("\n");
         //charge fees to both accounts
-        acct1.chargeFee();
-        acct2.chargeFee();
+     
+        System.out.printf("Service fee charged. " + acct1.getName() + "'s balance $%.2f", acct1.chargeFee());
+        System.out.println("\n");
+        System.out.printf("Service fee charged. " + acct2.getName() + "'s balance $%.2f", acct2.chargeFee());
+        System.out.println("\n");
         //change the name on Joe's account to Joseph
-        acct2.changeName("Josheph");
+        acct2.changeName("Joeseph");
         //print summary for both accounts
-        System.out.println(acct1);
+        System.out.println(acct1 + "\n");
         System.out.println(acct2);
     }
 }
