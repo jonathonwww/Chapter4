@@ -1,0 +1,43 @@
+/**
+ * This class allows for BandTest.java to call upon different functions
+ * like getting the bandboosters name and the number of boxes they sold
+ * @author Jonathon
+ * @version 10/22/17
+ */
+public class BandBooster {
+	private int boxesSold = 0;
+	private String name = "";
+	
+	/**
+	 * This is the constructor method that gives the bandbooster a name.
+	 * @param name
+	 */
+    public BandBooster(String name) {
+    	this.name = name;
+    }
+    
+    /**
+     * gets the name of the band booster
+     * @return name
+     */
+    public String getName() {
+    	return name;
+    }
+    
+    /**
+     * Adds to the number of boxes sold
+     * @param x- number of boxes sold
+     */
+	public void updateSales(int x) {
+		boxesSold += x;
+	}
+	
+	/**
+	 * This toString method prints the name and boxes sold of
+	 * the band booster.
+	 * @return name and boxes sold
+	 */
+	public String toString() {
+		return name + " sold " + boxesSold + " boxes.";
+	}
+}
