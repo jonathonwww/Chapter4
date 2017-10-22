@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class BandTest {
+	
+	public static void main (String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Please enter the name of the band booster: ");
+		BandBooster booster1 = new BandBooster(scan.nextLine());
+		
+		System.out.print("\nPlease enter the name of the band booster: ");
+		BandBooster booster2 = new BandBooster(scan.nextLine());
+		
+		System.out.print("\n\nEnter the number of boxes sold by " + booster1.getName() + " for week 1: ");
+		booster1.updateSales(scan.nextInt());
+		System.out.print("\nEnter the number of boxes sold by " + booster1.getName() + " for week 2: ");
+		booster1.updateSales(scan.nextInt());
+		System.out.print("\nEnter the number of boxes sold by " + booster1.getName() + " for week 2: ");
+		booster1.updateSales(scan.nextInt());
+		
+		System.out.print("\n\nEnter the number of boxes sold by " + booster2.getName() + " for week 1: ");
+		booster2.updateSales(scan.nextInt());
+		System.out.print("\nEnter the number of boxes sold by " + booster2.getName() + " for week 2: ");
+		booster2.updateSales(scan.nextInt());
+		System.out.print("\nEnter the number of boxes sold by " + booster2.getName() + " for week 2: ");
+		booster2.updateSales(scan.nextInt());
+		
+		System.out.println("\n\n" + booster1);
+		System.out.println("\n" + booster2);		
+	}
+}
