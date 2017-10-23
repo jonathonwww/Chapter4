@@ -1,0 +1,94 @@
+/**
+ * This allows Test.Name to create new name objects
+ * @author Jonathon
+ * @version 10/22/17
+ */
+public class Name {
+	private String first = "";
+	private String middle = "";
+	private String last = "";
+	private String name = "";
+	
+	/**
+	 * This assigns a string to all of the instance data
+	 * @param first
+	 * @param middle
+	 * @param last
+	 */
+	public Name (String first, String middle, String last) {
+		this.first = first;
+		this.last = last;
+		this.middle = middle;
+		name = first + " " + middle + " "  + last; 
+	}
+	
+	/**
+	 * returns the first name
+	 * @return first
+	 */
+	public String getFirst() {
+		return first;
+	}
+	
+	/**
+	 * returns the middle name
+	 * @return middle
+	 */
+	public String getMiddle() {
+		return middle;
+	}
+	
+	/**
+	 * returns the last name
+	 * @return last
+	 */
+	public String getLast() {
+		return last;
+	}
+	
+	/**
+	 * returns the first, middle, and last name
+	 * @return first, middle, last
+	 */
+	public String firstMiddleLast() {
+		return first + " " + middle + " "  + last;
+	}
+	
+	/**
+	 * Returns last, first, and middle name
+	 * @return last, first, middle
+	 */
+	public String lastFirstMiddle() {
+		return last + ", " + first + " " + middle;
+	}
+	
+	/**
+	 * Checks to see if the names are the same
+	 * @param otherName
+	 * @return true of false
+	 */
+	public boolean equals(String otherName) {
+		return (name.equalsIgnoreCase(otherName));
+	}
+	
+	/**
+	 * Returns the initials
+	 * @return f, m, l
+	 */
+	public String intitials() {
+		String f = first.substring(0,1);
+		String m = middle.substring(0,1);
+		String l = last.substring(0,1);
+		f = f.toUpperCase();
+		m = m.toUpperCase();
+		l = l.toUpperCase();
+		return f + m + l;
+	}
+	
+	public int length() {
+		int l1 = first.length();
+		int l2 = middle.length();
+		int l3 = last.length();
+		return l1 + l2 + l3;
+	}
+}
